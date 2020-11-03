@@ -12,9 +12,9 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 > Spring 을 사용하여 Web Service를 구현하기 전, 필수적으로 알고 있어야하는 지식을 모아 작성하였다.
 >
-> 한번에 전부 외우기 어렵다면, [TinySpring]()을 직접 만들어보며 확인하는 것도 좋은 방법이다. 
+> 한번에 전부 외우기 어렵다면, [TinySpring](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C)을 직접 만들어보며 확인하는 것도 좋은 방법이다. 
 >
-> (최소 한번은 읽은 상태로 만드는 것을 권장합니다)
+> (최소 한번은 읽은 상태로 [TinySpring](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C)을 만드는 것을 권장합니다)
 
 
 
@@ -87,7 +87,7 @@ Spring을 시작할 때 알아야하는 특징과 단어가 있다.
 
 
 
-[참고문헌]
+###### [참고문헌]
 
 [갓대희의 작은공간 String](https://goddaehee.tistory.com/156)
 
