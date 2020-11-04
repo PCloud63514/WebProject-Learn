@@ -1,6 +1,6 @@
 # Spring MVC?
 
-> SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework 의 MVC 모듈이다.
+> SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework 의 MVC 모듈입니다.
 
 
 
@@ -18,11 +18,11 @@
 
 - ##### View
 
-  - Model의 정보를 사용자에게 보여주는 UI 로직.  JSP 파일로 나타낸다.
+  - Model의 정보를 사용자에게 보여주는 UI 로직.  JSP 파일로 나타냅니다.
 
 - ##### Controller
 
-  - Model과 View의 인터페이스 역할. 사용자의 요청을 수신하고 Model에 변경된 데이터를 적용하고, View를 선택하여 전달한다.
+  - Model과 View의 인터페이스 역할. 사용자의 요청을 수신하고 Model에 변경된 데이터를 적용하고, View를 선택하여 전달합니다.
 
 
 
