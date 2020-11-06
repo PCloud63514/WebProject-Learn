@@ -54,10 +54,6 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-SpringContainer
-
-
-
 #### [DAO(Data Access Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dao.md)
 
 - DB에 접근하여, 데이터를 조회 및 조작 하는 객체
@@ -77,18 +73,6 @@ SpringContainer
 
 - Java5 부터 추가된 문법요소이다.  '주석'을 의미하며, Java Code에 주석처럼 작성하여 특수한 의미를 부여하는 키워드입니다.
 - Compile  또는 Runtime 에 동작합니다. 
-
-
-
-
-
-## Spring 특징
-
-Spring을 시작할 때 알아야하는 특징과 단어가 있다.
-
-
-
-
 
 
 

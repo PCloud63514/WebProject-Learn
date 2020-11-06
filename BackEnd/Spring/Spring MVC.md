@@ -12,17 +12,19 @@
 
 ![13705949504C57EB0E](https://user-images.githubusercontent.com/22608825/97969954-1d95ef80-1e04-11eb-853c-2f1d713f788c.jpg)
 
-- ##### Model
 
-  - 어플리케이션의 상태(데이터)와 비즈니스 로직을 담는 객체 JavaBeans
 
-- ##### View
+- ##### [Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Controller.md)
+
+  - Model과 View의 인터페이스 역할. 사용자의 요청을 수신하고 Model에 변경된 데이터를 적용하고, View를 선택하여 전달합니다.
+
+- ##### [View]()
 
   - Model의 정보를 사용자에게 보여주는 UI 로직.  JSP 파일로 나타냅니다.
 
-- ##### Controller
+- ##### [Model]()
 
-  - Model과 View의 인터페이스 역할. 사용자의 요청을 수신하고 Model에 변경된 데이터를 적용하고, View를 선택하여 전달합니다.
+  - 어플리케이션의 상태(데이터)와 비즈니스 로직을 담는 객체 JavaBeans
 
 
 

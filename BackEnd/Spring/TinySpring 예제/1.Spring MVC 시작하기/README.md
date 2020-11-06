@@ -73,27 +73,79 @@
 
 ## 프로젝트 구조
 
+> 우선 이 페이지는 IntelliJ를 사용한다는 전제로 작성되었습니다. 단 eclipse를 사용하지 않더라도 다른 블로그를 참고하며 하다보면 조금 다른 점을 찾을 수 있을 것입니다. 프로젝트 폴더의 web이 아니라 webapp 이라던지, pom.xml 위치가 다르거나, dispatcher-servlet.xml을 찾을 수 없고 servlet-context나 root-context.xml을 확인할 수 있을 것입니다. 이 페이지의 예제와 다른 이유는 eclipse의 STS를 사용해 프로젝트를 만들어서 차이를 보입니다.
+>
+> IntelliJ 또한 같은 구조의 프로젝트를 생성할 수 있습니다. 단 TinySpring에선 조금 씩 변경하며 진행하도록 하겠습니다.
+
+
+
 #### src/main/java
 
 > .java 파일이 작성되는 곳. Spring MVC에서 Servlet 구조를 만들어 주기 때문에, 별도의 Servlet을 만들 필요 없이 비즈니스에 맞춰 작성하면 됩니다.
 >
-> **Controller, Service, DAO** 파일이 위치하는 곳 입니다.
+> **[Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Controller.md), [Service](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Service.md), [DAO](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dao.md)** 파일이 위치하는 곳 입니다.
 
 #### src/main/resources
 
-> .java 
+> java 코드에서 사용할 리소스를 관리할 디렉토립니다.
+>
+> mapper 나 sql 쿼리 등을 의미합니다.
 
 #### src/test/java
 
-
+> Unit Test 코드를 작성할 디렉토리 입니다.
 
 **web**
 
 > 웹과 관련된 파일들이 위치해 있는 디렉토리 입니다. html, css, js, jsp 파일 등이 위치하고 있습니다.
 >
 > Web Application 구동에 필요한 XML 설정파일 또한 함께 위치하고 있습니다.
+>
+> - Eclipse(STS)의 경우 web 이 아닌 webapp 입니다.
+> - web 디렉토리는 외부의 접근을 허용합니다.
+> - 단 하위 폴더인 WEB-INF는 외부 접근이 불가능하며, [controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Controller.md)를 통해 접근이 가능합니다.
+> - 이는 compile된 class와 spring의 환경설정이 포함하여 보안의 목적을 위해 접근을 막는 것입니다.
+>
+> **Eclipse(STS)**의 경우 아래의 디렉토리를 포함하고 있습니다.
+>
+> - WEB-INF/class: 컴파일된 클래스
+> - WEB-INF/resources: js, css, image 등을 관리할 디렉토리
+> - WEB-INF/spring: spring 환경설정 파일
+> - WEB-INF/views: html, jsp 파일 등을 관리할 디렉토리
 
 
+
+## 파일 살펴보기
+
+> 
+
+### web.xml
+
+> WAS(Web Application Server, Tomcat)에 필요한 설정을 구성하는 XML 파일
+
+
+
+### applicationContext.xml
+
+>web application 에 공통으로 사용되는 [bean](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dto.md)을 설정하는 XML 파일.
+>
+>- eclipse(STS)는 root-context.xml 입니다.
+
+
+
+### dispatcher-servlet.xml
+
+>필요한 상황에 맞춰 사용되는 bean을 설정하는 XML 파일.
+>
+>applicationContext.xml에 작성된 bean이 있을 경우 dispatcher-servlet.xml에 작성된 bean이 우선적으로 적용됩니다.
+>
+>- eclipse(STS)는 servlet-context.xml 입니다.
+
+
+
+### pom.xml
+
+> [maven](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/1.Maven%20%EC%86%8C%EA%B0%9C.md) 설정 파일이며, 라이브러리 의존성 관리와 패키징 등의 관련 설정을 구성하는 XML 파일
 
 ## 동작시켜보기
 
@@ -137,3 +189,9 @@
 
 - 1. Error running 'index.jsp': port out of range:-1
 - 2. Error MS949
+
+
+
+## 참고자료
+
+[작성자: WHITEPAEK | 스프링 프로젝트 구성 설정](https://whitepaek.tistory.com/56)
