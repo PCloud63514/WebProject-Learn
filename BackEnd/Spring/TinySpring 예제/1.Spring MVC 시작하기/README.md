@@ -7,7 +7,7 @@
 **프로젝트 준비물**
 
 - IDE IntelliJ or eclipse
-- [Tomcat 8.5]() 
+- [Tomcat 8.5](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD/tomcat%20%EC%84%A4%EC%B9%98.md) 
 - jdk 11
 - maven
 
@@ -23,7 +23,7 @@
 
 ##### 2. GroupId & ArtifactId
 
-> GroupId 와 ArtifactId를 입력합니다.  ([Maven]()에서 설명)
+> GroupId 와 ArtifactId를 입력합니다.  ([Maven](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/1.Maven%20%EC%86%8C%EA%B0%9C.md)에서 설명)
 >
 > groupId: 프로젝트를 생성하는 조직의 고유 ID
 >
@@ -133,7 +133,7 @@
 
 ## 이 페이지를 따라하며 생길 수 있는 Error 목록
 
-[진행하다보면 생기는 오류]() 페이지
+[진행하다보면 생기는 오류](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C/%EC%A7%84%ED%96%89%ED%95%98%EB%8B%A4%EB%B3%B4%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%98%A4%EB%A5%98.md) 페이지
 
 - 1. Error running 'index.jsp': port out of range:-1
 - 2. Error MS949
