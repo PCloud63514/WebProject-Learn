@@ -25,14 +25,14 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-#### [IoC(Inversion of Control)]()
+#### [IoC(Inversion of Control)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/IoC.md)
 
 - 사전적 의미는 제어의 역전입니다.
 - Container 라는 개념을 이해하기 위해선 숙지해야합니다.
 
 
 
-#### [DI(Dependency Injection)]()
+#### [DI(Dependency Injection)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/DI.md)
 
 - IoC 프로그래밍 모델을 구현하는 방식 중 하나
 - Spring에서 IoC 라는 범용적인 의미를 넘어 명확한 의미를 부여하기 위한 이름.
@@ -40,13 +40,14 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-#### AOP(Aspect Orientend Programming)
+#### [AOP(Aspect Oriented  Programming)]()
 
+- 관점 지향 프로그래밍
 - 
 
 
 
-#### [Servlet]()
+#### [Servlet](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Servlet.md)
 
 - Client의 Request(요청)을 처리하고 처리 결과를 다시 Response(응답, 회신) 하는 기술.
 - 사용자와 서버간의 통신
