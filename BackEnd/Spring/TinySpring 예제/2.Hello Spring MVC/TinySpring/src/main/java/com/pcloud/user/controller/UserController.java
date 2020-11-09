@@ -1,11 +1,14 @@
 package com.pcloud.user.controller;
 
+import com.pcloud.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class UserController {
@@ -18,7 +21,7 @@ public class UserController {
         String name = request.getParameter("name");
         String phoneNum = request.getParameter("phoneNum");
 
-        String id = service.FindID();
+        String id = service.FindID(name, phoneNum);
         return id;
     }
     //접근 url: /getinfo?id=qwe123
@@ -31,6 +34,6 @@ public class UserController {
     //접근 url:/setinfo/qwe123/25
     @RequestMapping(value="setInfo/{name}/{age}", method=RequestMethod.POST)
     public void setInfo(@PathVariable("name") String name, @PathVariable("age") int age) {
-        service.SetInfo(name, age)
+        service.SetInfo(name, age);
     }
 }
