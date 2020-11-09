@@ -43,7 +43,6 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 #### [AOP(Aspect Oriented  Programming)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/AOP.md)
 
 - 관점 지향 프로그래밍
-- 
 
 
 
@@ -76,7 +75,19 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
+## 위의 글을 전부 읽었다면..
 
+> 아마 읽고 바로 이해가 되진 않을 것입니다. 그러면 구현해야하는 건 무엇이고, 프로젝트 구조는 어떻게 해야하고
+>
+> 다른 자료에서는 로깅이나 롬복 등 사용하는데 이런건 어떻게 해야하나? 라는 질문이 있을 수 있습니다.
+>
+>  이 페이지의 목표는 위의 질문을 해결하는 것이며, 글을 전부 한번 씩 읽었다는 전제하에 직접 따라해보는 TinySpring 예제를 준비했습니다.
+>
+> TinySpring 예제의 글과 함께 위에 작성된 글도 함께 읽으면서 진행하면 수월할 것입니다.
+
+
+
+> 정말 구현이 급하다면 SpringMVC(Controller, Model, Service, DAO, DTO, View)와 Anotation 만 읽어도 TinySpring을 진행에 문제는 없을 것 입니다.
 
 
 
