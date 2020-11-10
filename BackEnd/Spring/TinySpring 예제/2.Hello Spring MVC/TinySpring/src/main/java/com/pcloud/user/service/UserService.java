@@ -1,9 +1,9 @@
 package com.pcloud.user.service;
 
-import com.pcloud.user.dto.User;
+import com.pcloud.user.dto.UserDto;
 
 public interface UserService {
     public String FindID(String name, String phoneNum);
-    public User GetInfo(String name);
+    public UserDto GetInfo(String name);
     public void SetInfo(String name, int age);
 }

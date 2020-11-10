@@ -1,7 +1,7 @@
 package com.pcloud.user.service.impl;
 
 import com.pcloud.user.dao.UserDao;
-import com.pcloud.user.dto.User;
+import com.pcloud.user.dto.UserDto;
 import com.pcloud.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,17 +19,18 @@ public class UserServiceImpl implements UserService {
         System.out.println("name:" + name);
         System.out.println("phoneNum:" + phoneNum);
 
-        String id = dao.userSelect(name, phoneNum);
-        return id;
+        UserDto userDto = dao.userSelect(name, phoneNum);
+
+        return userDto.getId();
     }
 
     @Override
-    public User GetInfo(String name) {
+    public UserDto GetInfo(String name) {
         System.out.println("UserService: GetInfo Call");
         System.out.println("name:" + name);
 
-        User user = dao.userSelect(name);
-        return user;
+        UserDto userDto = dao.userSelect(name);
+        return userDto;
     }
 
     @Override
