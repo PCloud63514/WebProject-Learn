@@ -77,7 +77,7 @@
 >
 > IntelliJ 또한 같은 구조의 프로젝트를 생성할 수 있습니다. 단 TinySpring에선 조금 씩 변경하며 진행하도록 하겠습니다.
 
-
+  
 
 #### src/main/java
 
@@ -85,15 +85,21 @@
 >
 > **[Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Controller.md), [Service](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Service.md), [DAO](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dao.md)** 파일이 위치하는 곳 입니다.
 
+  
+
 #### src/main/resources
 
 > java 코드에서 사용할 리소스를 관리할 디렉토립니다.
 >
 > mapper 나 sql 쿼리 등을 의미합니다.
 
+  
+
 #### src/test/java
 
 > Unit Test 코드를 작성할 디렉토리 입니다.
+
+  
 
 **web**
 
@@ -113,25 +119,27 @@
 > - WEB-INF/spring: spring 환경설정 파일
 > - WEB-INF/views: html, jsp 파일 등을 관리할 디렉토리
 
-
+  
 
 ## 파일 살펴보기
 
-> 
+> Spring MVC를 진행하며 계속해서 기억하고, 수정해야하는 파일 목록들 입니다. 각자 Tomcat의 설정, Bean 설정, 의존성 라이브러리 설정 등 다양한 역할을 합니다. 아래 적힌 내용은 간단하게 설명해둔 내용이고 TinySpring을 진행할 때 모르거나 외워지지 않는다면 [Spring MVC 설정 파일 정리]() 를 봐주세요.
+
+  
 
 ### web.xml
 
 > WAS(Web Application Server, Tomcat)에 필요한 설정을 구성하는 XML 파일
 
-
+  
 
 ### applicationContext.xml
 
 >web application 에 공통으로 사용되는 [bean](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dto.md)을 설정하는 XML 파일.
 >
->- eclipse(STS)는 root-context.xml 입니다.
+>- eclipse(STS)는 **root-context.xml** 입니다.
 
-
+  
 
 ### dispatcher-servlet.xml
 
@@ -139,13 +147,15 @@
 >
 >applicationContext.xml에 작성된 bean이 있을 경우 dispatcher-servlet.xml에 작성된 bean이 우선적으로 적용됩니다.
 >
->- eclipse(STS)는 servlet-context.xml 입니다.
+>- eclipse(STS)는 **servlet-context.xml** 입니다.
 
-
+  
 
 ### pom.xml
 
 > [maven](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/1.Maven%20%EC%86%8C%EA%B0%9C.md) 설정 파일이며, 라이브러리 의존성 관리와 패키징 등의 관련 설정을 구성하는 XML 파일
+
+  
 
 ## 동작시켜보기
 
@@ -157,13 +167,13 @@
 > - netstat -ano | findstr 8080 입력
 > - taskkill /F /pid 포트번호 입력
 
-
+  
 
 ### 1. Add Configuration 클릭
 
 > 우측 상단의 Add Configuration.. 을 클릭합니다.
 
-
+  
 
 ### 2. Image를 따라하기
 
@@ -171,7 +181,7 @@
 
 ![Spring MVC 프로젝트 Run](https://user-images.githubusercontent.com/22608825/98331606-3f7bb600-2040-11eb-8200-3fa5a03735f3.gif)
 
-
+  
 
 ### 3. Shift + F10 을 눌러 서버 실행시키기
 
@@ -181,7 +191,7 @@
 
 [결과화면]
 
-
+  
 
 ## 이 페이지를 따라하며 생길 수 있는 Error 목록
 
@@ -190,7 +200,7 @@
 - 1. Error running 'index.jsp': port out of range:-1
 - 2. Error MS949
 
-
+  
 
 ## 참고자료
 

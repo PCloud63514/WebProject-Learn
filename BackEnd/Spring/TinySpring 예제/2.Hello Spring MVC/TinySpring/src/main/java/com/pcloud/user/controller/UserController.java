@@ -1,5 +1,6 @@
 package com.pcloud.user.controller;
 
+import com.pcloud.user.dto.UserDto;
 import com.pcloud.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class UserController {
     //접근 url: /getinfo?id=qwe123
     @RequestMapping(value="/getInfo", method=RequestMethod.GET)
     public String getInfo(@RequestParam String id) {
-
+        UserDto userDto = service.GetInfo(id);
 
         return "";
     }

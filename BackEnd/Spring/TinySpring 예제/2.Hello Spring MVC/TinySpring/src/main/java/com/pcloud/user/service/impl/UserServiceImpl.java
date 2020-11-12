@@ -11,8 +11,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDao dao;
 
-
-
     @Override
     public String FindID(String name, String phoneNum) {
         System.out.println("UserService: FindID Call");
@@ -25,11 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto GetInfo(String name) {
+    public UserDto GetInfo(String id) {
         System.out.println("UserService: GetInfo Call");
-        System.out.println("name:" + name);
+        System.out.println("id:" + id);
 
-        UserDto userDto = dao.userSelect(name);
+        UserDto userDto = dao.userSelect(id);
         return userDto;
     }
 

@@ -6,19 +6,19 @@ import org.springframework.stereotype.Repository;
 @Repository("userDao")
 public class UserDao {
 
-    public UserDto userSelect(String name, String phoneNUm) {
+    public UserDto userSelect(String name, String phoneNum) {
         UserDto userDto = new UserDto();
         userDto.setId("test123");
-        userDto.setName("pcloud");
-        userDto.setPhoneNum("000-0000-0000");
+        userDto.setName(name);
+        userDto.setPhoneNum(phoneNum);
         userDto.setAge(99);
 
         return userDto;
     }
 
-    public UserDto userSelect(String name) {
+    public UserDto userSelect(String id) {
         UserDto userDto = new UserDto();
-        userDto.setId("test123");
+        userDto.setId(id);
         userDto.setName("pcloud");
         userDto.setPhoneNum("000-0000-0000");
         userDto.setAge(99);
