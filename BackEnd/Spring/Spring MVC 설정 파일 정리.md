@@ -58,23 +58,44 @@
 
 | Element           | 설명                                                         |
 | ----------------- | ------------------------------------------------------------ |
+| context-param     | 모든 Servlet과 Filter들이 공유하는 Context.<br />Listener Element 가 있어야 작동. |
 | <servlet>         | 사용할 DispatcherServlet을 지정합니다. <br />web/WEB-INF 디렉토리에 <servlet-name>-servlet.xml 파일을 Spring 설정 파일로 사용합니다. |
 | <servlet-mapping> | 요청 url의 pattern을 지정하는 방법 입니다. ex)xxxx.do 로 요청 시 *.do |
 
 
 
+### Servlet Element
+
+> DispatcherServlet을 지정하는 것 외에도 추가적인 설정이 가능합니다.
+
+```xml
+<servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/main.xml
+            /WEB-INF/bbs.xml
+            classpath:/common.xml
+        </param-value>
+    </init-param>
+</servlet>
+```
+
+   
+
+| Element    | 설명                                                         |
+| ---------- | ------------------------------------------------------------ |
+| init-param | 한 개 이상의 설정파일을 사용하거나, 이름이 ***-servlet.xml 형식이 아닌 파일을 사용하기 위해 지정합니다.<br />contextConfigLocation 초기화 파라미터로 설정 파일 목록을 지정할 수 있습니다.<br />contextConfigLocation 초기화 파라미터는 설정 파일의 목록을 값으로 갖는데<br /> 이 때 각 설정 파일은 콤마, 공백, 탭, 줄 바꿈, 세미클론을 이용해 구분합니다.<br />각 설정 파일의 결로는 web application root directory를 기준으로 하며, <br />"file:" 이나 "classpath:"접두어를 이용해 Local File이나 ClassPath에 위치한 파일을 사용할 수 있습니다. |
+
+   
 
 
-## dispatcher-servlet.xml
 
-> Eclipse(STS)에서는 servlet-context.xml이라는 이름으로 생성되는 이 파일은,
->
-> web application의 사용자 요청을 받기 위한 entity point로 써 servlet의 context 설정이다.
-
-- 
-- servlet-context.xml
-
-
+![image](https://user-images.githubusercontent.com/22608825/99663427-f3059100-2aa9-11eb-9d49-d5106711b310.png)
 
 
 
@@ -82,7 +103,43 @@
 
 ## applicationContext.xml
 
-- root-context.xml
+> 위 이미지의 Root WebApplicationContext에 해당하는 파일 입니다.
+>
+> Web Application 최상단에 위치하고 있는 Context로써, web.xml의 context-param 태그에서 확인할 수 있습니다.
+>
+> Spring에서 Application Context는 BeanFactory를 상속받고 있는 Context라는 의미로, 아래의 특징을 갖고 있습니다.
+
+​    
+
+- Eclipse(STS)에선 root-context.xml 으로 생성됩니다.
+- 특정 Servlet 설정과 관계없는 bean, Service, Repository(dao), DB 등 비즈니스 로직과 관련된 설정을 담당합니다.
+- 최상단 Context이기 때문에, 여러 Servlet에서 공통적으로 사용할 수 있는 Bean을 정의합니다.
+- 최상단 Context이기 때문에, 하위 Servlet(***-servlet.xml)에 정의된 Bean을 사용할 수 없습니다.
 
 
 
+## dispatcher-servlet.xml
+
+> 브라우저의 요청을 받았을 때, 어떤 Controller로 처리할지 정의하는 파일 입니다.
+>
+> Servlet 단위로 생성되는 Context로써, Application Context를 자신의 부모 Context로 지정합니다.
+>
+> web.xml에서 별도의 설정을 하지 않았다면 dispatcher-servlet을 사용하게 됩니다.
+
+​    
+
+- Eclipse(STS)에선 servlet-context.xml 으로 생성됩니다.
+- url과 관련된 Controller, @(Anotation), ViewResolver, Interceptor, MultiparResolver, View, bean 등의 설정이 가능합니다.
+- ApplicationContext의 자식 context이기 때문에, Application Context와 ServletContext에 같은 id의 Bean이 등록되었을 경우, Servlet Context에 선언된 Bean을 사용합니다.
+
+
+
+**Bean 찾는 순서: Servlet Context 조사 -> 없다면 Application Context 조사.**
+
+
+
+
+
+## 참고자료
+
+[Carrey's Application-Context와 Servlet-Context](https://jaehun2841.github.io/2018/10/21/2018-10-21-spring-context/#web-application-context)
