@@ -14,7 +14,7 @@
 
 
 
-- ##### [Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Controller.md)
+- ##### [Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring MVC Link/Controller.md)
 
   - Model과 View의 인터페이스 역할. 사용자의 요청을 수신하고 Model에 변경된 데이터를 적용하고, View를 선택하여 전달합니다.
 

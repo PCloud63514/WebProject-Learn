@@ -25,14 +25,14 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-#### [IoC(Inversion of Control)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/IoC.md)
+#### [IoC(Inversion of Control)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/IoC.md)
 
 - 사전적 의미는 제어의 역전입니다.
 - Container 라는 개념을 이해하기 위해선 숙지해야합니다.
 
 
 
-#### [DI(Dependency Injection)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/DI.md)
+#### [DI(Dependency Injection)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/DI.md)
 
 - IoC 프로그래밍 모델을 구현하는 방식 중 하나
 - Spring에서 IoC 라는 범용적인 의미를 넘어 명확한 의미를 부여하기 위한 이름.
@@ -40,27 +40,27 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-#### [AOP(Aspect Oriented  Programming)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/AOP.md)
+#### [AOP(Aspect Oriented  Programming)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/AOP.md)
 
 - 관점 지향 프로그래밍
 
 
 
-#### [Servlet](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Servlet.md)
+#### [Servlet](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/Servlet.md)
 
 - Client의 Request(요청)을 처리하고 처리 결과를 다시 Response(응답, 회신) 하는 기술.
 - 사용자와 서버간의 통신
 
 
 
-#### [DAO(Data Access Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dao.md)
+#### [DAO(Data Access Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/Dao.md)
 
 - DB에 접근하여, 데이터를 조회 및 조작 하는 객체
 - Service와 DB를 연결하는 관계로 SQL를 사용해 DB에 접근한 후 적절한 CRUD API를 제공합니다.
 
 
 
-#### [DTO(Data Transfer Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Dto.md)
+#### [DTO(Data Transfer Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/Dto.md)
 
 - 계층간(Controller, Service, Dao 등) 데이터 교환을 위한 객체(java Beans 이다.) VO 라고 표현합니다.
 
