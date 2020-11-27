@@ -97,7 +97,7 @@
 
 ### 3.Controller 생성
 
-> 사용자의 요청을 받고 처리하기 위해 Controller를 생성해야합니다. 
+> 사용자의 요청을 받고 처리하기 위해 [Controller](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring MVC Link/Controller.md)를 생성해야합니다. 
 >
 > 우선 예제를 위해 HomeController.java 를 작성하겠습니다.
 
