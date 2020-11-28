@@ -23,11 +23,11 @@
 
 - 받기
 
-- > docker pull [![img]()](https://github.com/zkdlu/Mall-Mall/blob/master/back/tutorial/1. AWS접속 후 Docker설치까지.md)
+- > docker pull
 
 - 삭제
 
-- > docker rmi [OPTIONS] [![img]()](https://github.com/zkdlu/Mall-Mall/blob/master/back/tutorial/1. AWS접속 후 Docker설치까지.md)
+- > docker rmi [OPTIONS]
 
 | 옵션 | 설명               |
 | ---- | ------------------ |
