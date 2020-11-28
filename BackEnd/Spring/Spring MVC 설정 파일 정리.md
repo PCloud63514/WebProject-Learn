@@ -49,7 +49,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name> 
-        <url-pattern>/*</url-pattern> <!-- */from 을 /*로 변경-->
+        <url-pattern>/</url-pattern> <!-- */from 을 /로 변경-->
     </servlet-mapping>
 </web-app>
 ```
@@ -61,6 +61,38 @@
 | context-param     | 모든 Servlet과 Filter들이 공유하는 Context.<br />Listener Element 가 있어야 작동. |
 | <servlet>         | 사용할 DispatcherServlet을 지정합니다. <br />web/WEB-INF 디렉토리에 <servlet-name>-servlet.xml 파일을 Spring 설정 파일로 사용합니다. |
 | <servlet-mapping> | 요청 url의 pattern을 지정하는 방법 입니다. ex)xxxx.do 로 요청 시 *.do |
+
+
+
+#### 한글 Encoding 셋팅
+
+> 서버 동작 시 한글이 깨지는 것을 방지하기 위해 web.xml에 추가해주세요.
+
+
+
+```xml
+<!-- Character Set Filter -->
+<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+```
+
+
 
 
 
