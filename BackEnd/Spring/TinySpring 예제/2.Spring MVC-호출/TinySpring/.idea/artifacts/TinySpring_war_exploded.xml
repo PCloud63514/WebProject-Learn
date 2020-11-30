@@ -11,6 +11,19 @@
           <element id="library" level="project" name="Spring-5.2.3.RELEASE" />
           <element id="library" level="project" name="Spring MVC-5.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.3" />
         </element>
       </element>
     </root>

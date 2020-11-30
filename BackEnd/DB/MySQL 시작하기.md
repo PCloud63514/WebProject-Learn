@@ -111,7 +111,7 @@ use tinydb;
 
 ​     
 
-#### gender table 만들기
+#### Gender table 만들기
 
 ```
 create table Gender(
@@ -122,7 +122,7 @@ create table Gender(
 
 ​      
 
-#### user table 만들기
+#### User table 만들기
 
 ```
 create table User(
@@ -137,7 +137,7 @@ create table User(
 
 
 
-#### table 생성 확인하기
+#### Table 생성 확인하기
 
 > 재대로 생성되었는지 확인해주세요.
 
