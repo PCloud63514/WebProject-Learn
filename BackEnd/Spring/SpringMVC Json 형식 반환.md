@@ -8,7 +8,7 @@
 
 ## 1. 과정
 
-> 우선 [2.Spring MVC-호출](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring 예제/2.Spring MVC-호출)  과정을 진행한 것을 기준으로 하겠습니다.
+> 우선 [2.Spring MVC-호출](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C/2.Spring%20MVC-%ED%98%B8%EC%B6%9C)  과정을 진행한 것을 기준으로 하겠습니다.
 
 ​     
 
@@ -16,7 +16,7 @@
 
 > pom.xml에 내용을 추가 후 빌드해줍니다.
 >
-> *[진행하다보면 생기는오류](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/TinySpring 예제/진행하다보면 생기는 오류.md)의 6,7 번을 읽어보면 jackson 버전에 의한 에러를 설명해줍니다. 혹 500error 등이 발생하면 참고해주세요.
+> *[진행하다보면 생기는오류](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C/%EC%A7%84%ED%96%89%ED%95%98%EB%8B%A4%EB%B3%B4%EB%A9%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%20%EC%98%A4%EB%A5%98.md)의 6,7 번을 읽어보면 jackson 버전에 의한 에러를 설명해줍니다. 혹 500error 등이 발생하면 참고해주세요.
 
 ```xml
         <dependency>

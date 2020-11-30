@@ -1,6 +1,6 @@
 # MySQL 시작하기
 
-> - 이전페이지 [MySQL 설치 및 세팅하기](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/DB/MySQL 설치.md)
+> - 이전페이지 [MySQL 설치 및 세팅하기](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/DB/MySQL%20%EC%84%A4%EC%B9%98.md)
 >
 > 이번 페이지는 설치한 MySQL을 접속 및 기본 셋팅을 진행하고 간단한 테이블 및 데이터를 삽입하는 작업을 진행하겠습니다.
 
