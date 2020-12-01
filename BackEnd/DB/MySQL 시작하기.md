@@ -82,9 +82,36 @@ default-character-set=utf8
 
 ## 3. Query 사용하기
 
-> 테이블 생성 및 튜플 삽입 등을 해볼 것입니다. 그 전에 DML, DDL, DCL 등을 모른다면 문서를 읽고 와주세요.
+> 사용자 계정 생성 테이블 생성 및 튜플 삽입 등을 해볼 것입니다. 그 전에 DML, DDL, DCL 등을 모른다면 문서를 읽고 와주세요.
 
    
+
+### User 생성하기
+
+>앞으로 사용하게될 User를 생성하고 권한을 줍니다.
+
+#### User 목록 확인
+
+```
+use mysql;
+select host, user, from user;
+```
+
+#### User 생성 
+
+```
+create user 사용자 명@localhost identified by '비밀번호';
+```
+
+#### 추가사항
+
+> 계정 권한으로 접근에 발생할 에러를 방지 하기 위해 추가합니다.
+
+```
+alter user '계정'@localhost identified with mysql_native_password by '비밀번호';
+```
+
+
 
 ### 데이터베이스 생성하기
 
@@ -95,7 +122,17 @@ create database [데이터베이스 이름]
 ex) create database tinydb DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
 
-   이후 생성된 데이터베이스에 접속합니다.
+
+
+#### 권한 추가  
+
+> mysql의 db 접근을 위해 계정에 권한을 추가합니다.
+
+```
+grant all privileges ON DB명.* TO '계정'@'localhost';
+```
+
+ 이후 생성된 데이터베이스에 접속합니다.
 
 ```
 use tinydb;

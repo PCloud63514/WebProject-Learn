@@ -177,9 +177,13 @@
 
 ### 2. Image를 따라하기
 
-> 글로 하나하나 쓰기에는 길기 때문에 gif를 첨부합니다.
+> 접속 포트 8080이 이미 사용될 가능성이 높습니다.
+>
+> 이를 위해 여기선 포트 8888을 사용하겠습니다.
 
-![Spring MVC 프로젝트 Run](https://user-images.githubusercontent.com/22608825/98331606-3f7bb600-2040-11eb-8200-3fa5a03735f3.gif)
+#### 과정
+
+![tom](https://user-images.githubusercontent.com/22608825/100709957-52d93180-33f2-11eb-8a70-0f75ced554eb.gif)
 
   
 

@@ -13,6 +13,8 @@
 > add framework suport.. 전에 먼저 수정할 경우 재대로 프로젝트 구성이 이루어지지 않을 수 있습니다.
 >
 > 이전 페이지의 과정을 전부 마친 후에 진행해주세요.
+>
+> @RequestMapping 같은 어노테이션은 Spring.web에 존재하기 때문에 아래의 의존성 파일을 추가해야합니다.(spring-webmvc 등)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
