@@ -1,6 +1,6 @@
 # 4. Spring MVC-DB데이터 가져오기
 
-> - 이전 페이지:[Spring MVC-호출](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C/2.Spring%20MVC-%ED%98%B8%EC%B6%9C)
+> - 이전 페이지:[Spring MVC-연동](https://github.com/PCloud63514/WebProject-Learn/tree/master/BackEnd/Spring/TinySpring%20%EC%98%88%EC%A0%9C/3.Spring-MVC-DB%EC%97%B0%EB%8F%99)
 >
 > 이번 과정에서는 Controller, Service, Dao, dto 을 구현하고 jdbcTemplate을 이용해 데이터를 가져오는 작업을 진행할 것입니다.
 >

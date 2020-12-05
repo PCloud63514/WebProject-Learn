@@ -53,14 +53,14 @@ SpringMVC 란 Spring의 웹 애플리케이션 개발을 위한 Spring Framework
 
 
 
-#### [DAO(Data Access Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/Dao.md)
+#### [DAO(Data Access Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/DAO%20%26%20Repository.md)
 
 - DB에 접근하여, 데이터를 조회 및 조작 하는 객체
 - Service와 DB를 연결하는 관계로 SQL를 사용해 DB에 접근한 후 적절한 CRUD API를 제공합니다.
 
 
 
-#### [DTO(Data Transfer Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/Dto.md)
+#### [DTO(Data Transfer Object)](https://github.com/PCloud63514/WebProject-Learn/blob/master/BackEnd/Spring/Spring%20MVC%20Link/DTO%20%26%20VO.md)
 
 - 계층간(Controller, Service, Dao 등) 데이터 교환을 위한 객체(java Beans 이다.) VO 라고 표현합니다.
 
