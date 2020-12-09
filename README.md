@@ -28,3 +28,4 @@ Web 개발에 필요한 Back-end, Front 지식을 종합하여 작성한 페이�
 
 - AWS
 - Docker
+- Elasticsearch
