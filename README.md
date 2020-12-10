@@ -26,6 +26,6 @@ Web 개발에 필요한 Back-end, Front 지식을 종합하여 작성한 페이�
 
 ## Extra
 
-- AWS
+- [AWS](https://github.com/zkdlu/WebProject-Learn/blob/master/Extra/AWS/AWS%20S3%20%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90.md)
 - Docker
 - Elasticsearch
