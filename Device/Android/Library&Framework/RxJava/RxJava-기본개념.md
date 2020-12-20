@@ -193,7 +193,6 @@ Observable.range(0, 3).subscribe(::println)
 > Observable에서 데이터를 발행할 때 각각의 Observer에게 항시 새로운 Observable을 생성합니다.
 >
 > - 즉 create, just는 연산자 선언 순간 메모리가 할당되지만, defer는 Ovserver의 subscrive 전 까진 할당되지 않습니다.
-> - 또한 
 
 ```
 
@@ -240,8 +239,6 @@ Thread.sleep(2000)
    
 
 ## 변환 연산자
-
->
 
 #### buffer
 
@@ -324,6 +321,21 @@ ABCDE
 >
 
 
+
+
+
+## 그외
+
+#### CompositeDisposable
+
+> 다수의 Disposable을 쉽게 관리할 수 있는 클래스입니다.
+>
+> 각 컴포넌트(Activity, Fragment, ViewModel)의 LifeCycle에 맞춰 dispose 시켜야 메모리 누수에 안전합니다.
+>
+> dispose와 clear 함수를 호출할 수 있습니다.
+>
+> - dispose: isDisposed를 true로 변경합니다. (즉 재사용 불가)
+> - clear: dispose를 해제 후에 다시 사용 가능합니다.
 
 
 
