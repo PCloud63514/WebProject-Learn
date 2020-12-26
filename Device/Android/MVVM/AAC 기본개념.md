@@ -45,6 +45,22 @@ AAC는 총 5개의 Library로 구성되었습니다.
 ### LiveData (Lifecycle aware observable)
 
 > Data를 Obserable 로 Wrapping하여 Lifecycle 및 데이터 변화를 감지합니다.
+>
+> 핵심은 Component의 생명주기가 active 상태에서 data의 update를 진행하기 때문에 UI와 데이터 상태를 일치시킬 수 있다는 점입니다.
+>
+> - UI가 데이터 상태와 일치시키는 것을 보장한다.
+>   - LiveData는 Observer 패턴을 따르며, Component의 생명주기에 변경이 일어날 때마다 Observer 객체에 알립니다.
+>   - Observer 객체를 사용하면 UI를 변경해야하는 플루코드를 통합하여 관리할 수 있습니다.
+>
+> - 메모리 누수에 효과적이다.
+>   - Component의 Lifecycle 객체와 결합되어 있기 때문에 Component의 Destroy와 함께 메모리 해지가 발생합니다.
+> - Lifecycle 의 stop 상태의 activity 와 Crash가 발생하지 않습니다.
+>   - Observer의 생명주기가 inactive일 경우 Observer는 LiveData의 이벤트를 수신하지 않습니다.
+> - 항상 최신의 데이터를 유지합니다.
+> - 화면 구성이 변경되어도 데이터를 유지합니다.
+>   - 화면 회전같은 activity가 새로 그려지는 이벤트도 LiveData는 회전하기 전의 최신 상태를 즉시 가져옵니다.
+> - Resource를 공유할 수 있습니다.
+>   - LiveData를 확장하는 클래스를 작성하여 싱글톤 패턴으로 관리하면 글로벌하게 사용할 수 있습니다.
 
 ##### Override Method
 
@@ -80,3 +96,8 @@ AAC는 총 5개의 Library로 구성되었습니다.
 
 #### 5. Paging (Gradually loading information)
 
+
+
+## 참고문헌
+
+[[Android\] AAC ViewModel과 찰떡 궁합! LiveData 이해하기 :: 준비된 개발자 (tistory.com)](https://readystory.tistory.com/101)

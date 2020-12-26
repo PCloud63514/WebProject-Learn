@@ -20,7 +20,23 @@
 
 
 
+## Install
 
+- [Download Elasticsearch Free | Get Started Now | Elastic | Elastic](https://www.elastic.co/kr/downloads/elasticsearch)
+
+환경에 맞춰 설치하면 됩니다. ElasticSearch와 Kibana를 함께 설치할 것이므로, [Kinana]() 문서도 참고해주시기 바랍니다.
+
+
+
+Windows 기준
+
+- 설치 후 bin/elasthcsearch.bat 관리자 권한으로 실행.
+
+- localhost:9200 접속
+
+- 아래의 출력 메시지와 비슷한 것이 나오면 성공입니다. (name, uuid, hash는 가렸습니다.)
+
+![image](https://user-images.githubusercontent.com/22608825/103148447-fe339700-47a2-11eb-905b-681b893afa0c.png)
 
 
 
