@@ -12,9 +12,7 @@ Elastic Search의 가장 큰 특징이라면 RDBMS와 다르게 Document 지향�
 
 **Index**는 Elastic Search에서 단일 타입의 Document를 저장하고 관리하는 일종의 컨테이너 입니다.
 
-RDBMS에서 비교한다면 **Database**(스키마에 보다 가까움)의 개념입니다.
-
-<img src="https://user-images.githubusercontent.com/22608825/103151221-6b552580-47bf-11eb-8a05-6e1b6f1fdf69.png" alt="111" style="zoom:67%;" />
+<img src="https://user-images.githubusercontent.com/22608825/103193424-c69e2980-491f-11eb-9cf2-3f387a2f0eb6.png" alt="111" style="zoom:50%;" />
 
 
 
@@ -22,24 +20,23 @@ RDBMS에서 비교한다면 **Database**(스키마에 보다 가까움)의 개�
 
 ```
 이 페이지에선 Elastic Search 7.10.1을 기준으로 진행하고 있습니다.
-Elastic Search 6.0 미만의 버전에서는 하나의 Index에서 여러 Type을 포함할 수 있었습니다.
-하지만 6.0 버전부터 Index는 단일 Type만 갖을 수 있도록 변경되었습니다. 
-* 6.0이전 버전에서 6.0 이후 업데이트에도 문제는 없습니다.
 ```
 
   
 
-## Type
+## Type (Document Type)
 
 **Type**은 Elastic Search에서 논리적으로 Index 내에 같은 Document 종류를 그룹화 하고 구성하는 것을 의미합니다.
 
-RDBMS에서 **Table**의 역할과 유사합니다. 
+Elastic Search 7.x  Typeless를 지향하며 Type 구조가 삭제되었습니다.
+
+Type 구조가 사라지며 기존 자리는 _doc으로 대체되었지만 이는 진행하며 다른 페이지에서 설명할 것 입니다.
 
 
 
 ## Document
 
-**Document**는 Elastic Search에서 정보의 기본 단위를 의미합니다.  RDBMS에서 **Row**의 역할과 유사합니다.
+**Document**는 Elastic Search에서 정보의 기본 단위를 의미합니다.
 
 맨 위의 사진처럼 Index와 Type 안에 포함되어 있으며, 다중 필드(속성)를 포함하고 있습니다.
 
@@ -55,31 +52,41 @@ RDBMS에서 **Table**의 역할과 유사합니다.
 
 ## 중간정리
 
-Index, Type, Document 의 내용을 정리하기 위해 아래의 예시를 확인하겠습니다.
+Index, Document 의 내용을 정리하기 위해 아래의 예시를 확인하겠습니다.
+
+#### 예시
 
 ```json
-PUT /catalog/product/1
+PUT /message/_doc/1
 {
-  "sku": "SP000001",
-  "title": "Elasticsearch for Hadoop",
-  "description": "Elasticsearch for Hadoop Description",
-  "author": "Vlshal Shukla",
-  "ISBN": "1785288997",
-  "price": 26.99
+  "name" : "PCloud",
+  "message" : "Hello!",
+  "date" : "2020-12-26T17:17:25"
 }
 ```
 
+#### 예시 결과 (GET)
+
+```json
+{
+  "_index" : "message",
+  "_type" : "_doc",
+  "_id" : "1",
+  "_version" : 1,
+  "_seq_no" : 0,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "name" : "PCloud",
+    "message" : "Hello!",
+    "date" : "2020-12-26T17:17:25"
+  }
+}
+```
+
+JSON 으로작성하지 않은 _(언더바) 가 붙은 Field를 확인할 수 있습니다. 이를 Meta Field, 직접 정의한 Field를 사용자 정의 Field라 합니다.
 
 
-Elastic Search에 JSON Document를 색인했을 때의 예시입니다.
-
-- catalog는 Index
-- product는 Type
-- 그 외의 내용 (sku, title 등)은 Document를 의미합니다.
-
-  
-
-  
 
 ## Node
 
@@ -184,6 +191,3 @@ Clusher에서 Node1에게 장애가 발생했을 경우 Node1에 위치한 Shard
 Cluster는 여러 Node로 구성될 수 있으며, 각 Node는공유 데이터를 저장하고 관리합니다.
 
 단일  Cluster는 하나 이상의 Index를 호스팅할 수 있으며, Index는 Document의 연관 Type에 대한 논리적 그룹입니다.
-
-
-
