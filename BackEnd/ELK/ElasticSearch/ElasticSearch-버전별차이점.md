@@ -76,6 +76,6 @@ API 변경은 Elastic Search 버전을 업그레이드 하는 것에 있어 큰 
 
 ### [Elastic Stack 7.0 출시 밎 지금까지의 변경들 - Jongmin's blog (kimjmin.net)](http://kimjmin.net/2019/04/2019-04-elastic-stack-7-release/)
 
-[Elasticsearch 7.0에서 형식으로부터 무형식 API로 이행 | Elastic Blog](https://www.elastic.co/kr/blog/moving-from-types-to-typeless-apis-in-elasticsearch-7-0)
+### [Elasticsearch 7.0에서 형식으로부터 무형식 API로 이행 | Elastic Blog](https://www.elastic.co/kr/blog/moving-from-types-to-typeless-apis-in-elasticsearch-7-0)
 
-[[Elasticsearch\] 핵심 개념 - 매핑 타입이 사라지면서 멀티 타입 인덱스를 싱글 타입 인덱스로 마이그래이션 :: gintire (tistory.com)](https://gintrie.tistory.com/48)
+### [[Elasticsearch\] 핵심 개념 - 매핑 타입이 사라지면서 멀티 타입 인덱스를 싱글 타입 인덱스로 마이그래이션 :: gintire (tistory.com)](https://gintrie.tistory.com/48)
