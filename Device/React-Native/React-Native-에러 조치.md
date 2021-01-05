@@ -55,7 +55,7 @@ android/gradle/wrapper/gradle-wrapper.properties 열기
 
 distributionUrl 속성의 gradle 버전 변경 -> [Gradle | Releases](https://gradle.org/releases/) 버전 맞춰서 설정
 
-- [ojdkbuild/ojdkbuild: Community builds using source code from OpenJDK project (github.com)](https://github.com/ojdkbuild/ojdkbuild) 에서 jdk 8 받고 path 설정 다시하는게 편하긴하다.
+- [OpenJDK project (github.com)](https://github.com/ojdkbuild/ojdkbuild) 에서 jdk 8 받고 path 설정 다시하는게 편하긴하다.
 
 ```
 distributionUrl=https\://services.gradle.org/distributions/gradle-6.7.1-all.zip
