@@ -60,3 +60,18 @@ distributionUrl 속성의 gradle 버전 변경 -> [Gradle | Releases](https://gr
 ```
 distributionUrl=https\://services.gradle.org/distributions/gradle-6.7.1-all.zip
 ```
+
+
+
+## styled-compoments createGlobalStyle 사용 문제
+
+React 에서 잘만 사용되던 createGlobalStyle function이 정작 React Native에서는 사용이 안된다.
+
+공식문서를 참조해보니 Web에서만 동작한다는 것을 확인했다. (즉 react만 사용된다는 것)
+
+createGlobalStyle을 사용하려는 이유는 공통 Style을 잡기 위함인데, 이를 대체할 수 있는 것이 무엇일지 찾아보았다.
+
+
+
+
+
