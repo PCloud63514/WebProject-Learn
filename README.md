@@ -22,8 +22,8 @@ Web 개발에 필요한 Back-end, Front 지식을 종합하여 작성한 페이�
 
 ## Device
 
-- Android(https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/Android)
-- Expo(https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/Expo)
+- [Android](https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/Android)
+- [Expo](https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/Expo)
 - [IOS](https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/IOS)* 미정
 - [React-Native](https://github.com/PCloud63514/WebProject-Learn/tree/master/Device/React-Native)
 
