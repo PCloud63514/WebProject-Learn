@@ -79,23 +79,50 @@ npx 사용 예정
 
 2. npx react-native init <Project Name>
 
+   1. Type script 로 하기 위해선 --template react-native-template-typescript 추가
+
 3. 생성 후 cd 명령어를 사용해 폴더 이동
 
 4. android 폴더 내에 local.properties 파일 생성 및 SDK 경로 입력
 
    1. ```
-      sdk.dir = C\:\\Users\\dream\\AppData\\Local\\Android\\Sdk
+      sdk.dir = C\:\\Users\\{name}\\AppData\\Local\\Android\\Sdk
       ```
 
-5. ADB Manager에서 API Level 29로 하나 Device 생성 및 실행
+5. jetify 추가
 
-6. npx react-native run-android
+   1. ```
+      npx jetify
+      
+      루트 디렉토리의 package.json 수정
+      
+      scripts에 아래 내용 추가
+      "preandroid":"npx jetify"
+      ```
+
+6. ADB Manager에서 API Level 29로 하나 Device 생성 및 실행
+
+7. npx react-native run-android
 
 
 
 ## 끝
 
 ![image](https://user-images.githubusercontent.com/22608825/103620454-d7c9e480-4f76-11eb-94e6-68daf278603c.png)
+
+
+
+
+
+error Failed to install the app. Make sure you have the Android development environment t set up: https://reactnative.dev/docs/environment-setup. Run CLI with --verbose flag r 
+for more details.
+Error: Command failed: gradlew.bat app:installDebug -PreactNativeDevServerPort=8081   
+
+
+
+
+
+
 
 ## 참고문헌
 

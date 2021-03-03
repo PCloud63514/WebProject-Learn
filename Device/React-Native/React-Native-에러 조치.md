@@ -29,19 +29,17 @@
 > ```
 >
 > ```json
-> "preandroid": "npx jetify" <-- 추가
-> ===================================================
->"scripts": {
->   "preandroid": "npx jetify",
-> "android": "react-native run-android",
->  "ios": "react-native run-ios",
+> "scripts": {
+> "preandroid": "npx jetify",<-- 추가
+>"android": "react-native run-android",
+>   "ios": "react-native run-ios",
 > "start": "react-native start",
 >  "test": "jest",
 > "lint": "eslint ."
-> }
->```
+>  }
+> ```
 > 
-> 
+>
 
 
 
