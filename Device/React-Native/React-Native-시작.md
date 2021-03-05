@@ -236,7 +236,7 @@ export default React.Component(MyComponent)
 
 Life Cycle Function 도 차이가 존재합니다.
 
-**Class Component** 는 앞서 설명한 didMount 나 didUpdate 같이 작성된 것을 확인했을 것 입니다.
+**Class Component** 는 앞서 설명한 didMount 나 didUpdate 가 작성된 것을 확인했을 것 입니다.
 
 하지만 **Function Component**는 **useEffect** 라는 Hook 함수가 그 자리를 대신하고 있습니다.
 
@@ -257,7 +257,7 @@ useEffect(()=> {
 [this.title]) <--- 핵심
 ```
 
-이는 **componentDidUpdate** 처럼 동작하며 title이 변경하는 것을 감지합니다.
+이는 Rendering 직후 호출될 때 title이 변경되었는지 확인 후 변경되었다면 호출되는 방식입니다.
 
 만약 Rendering 직후 useEffect의 호출을 원하지 않는다면 이를 [] 이렇게 비워놓아 호출을 방지할 수 있습니다.
 
