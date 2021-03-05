@@ -57,10 +57,10 @@ Component가 갖는 속성입니다.
 ```jsx
 ...
 class MyComponent extends React.Component {
-	state = {
-		name:'PCloud',
-		year:2021
-	}
+    state = {
+        name:'PCloud',
+        year:2021
+    }
 }
 ```
 
@@ -156,35 +156,35 @@ export default class MyComponent extends React.Component {
     state = {
         name:"PCloud"
     }
-	constructor({props}) {
-		super(props)
-	}
+    constructor({props}) {
+        super(props)
+    }
 	
-	shouldComponentUpdate(nextStates, nextProps) {
-		if(this.state !== nextState || this.props !== nextProps) {
+    shouldComponentUpdate(nextStates, nextProps) {
+        if(this.state !== nextState || this.props !== nextProps) {
             return true
         }
         return false
-	}
+    }
 	
-	componentDidMount() {
-		this.setState({name:"User"})
-	}
+    componentDidMount() {
+        this.setState({name:"User"})
+    }
 	
-	componentDidUpdate(preProps) {
+    componentDidUpdate(preProps) {
 	
-	}
+    }
 	
-	render() {
+    render() {
         const { title } = this.props
         const { name } = this.state
-		return (
-			<View style={{flex:1}}>
+        return (
+            <View style={{flex:1}}>
                 <Text>{title}</Text>
                 <Text>{name}</Text>
-			</View>
-		)
-	}
+            </View>
+        )
+    }
 }
 ```
 
@@ -200,18 +200,18 @@ Function 방식으로 구현된 Component 입니다.
 import React, { useState, useEffect } from 'react'
 import { Text, View } from 'react-native' 
 const MyComponent = ({title}) => {
-	const [name, setName] = useState('PCloud')
+    const [name, setName] = useState('PCloud')
     
-	useEffect(()=> {
+    useEffect(()=> {
         this.setName('User')
     })
 	
-	return (
-		<View>
+    return (
+        <View>
             <Text>{this.title}</Text>
             <Text>{this.name}</Text>
-		</View>
-	)
+        </View>
+    )
 }
 export default React.Component(MyComponent)
 ```
@@ -252,7 +252,7 @@ Life Cycle Function 도 차이가 존재합니다.
 
 ```jsx
 useEffect(()=> {
-   this.setName('User')
+    this.setName('User')
 },
 [this.title]) <--- 핵심
 ```
@@ -277,7 +277,7 @@ PureComponent는 자동으로 Current State & Props 와 next State Props를 얕�
 import React from 'react'
 
 export default class MyComponent extends React.PureComponent {
-	...
+    ...
 }
 ```
 
@@ -291,7 +291,7 @@ memo 또한 동일합니다.
 import React from 'react'
 
 const MyComponent = (props) => {
-	...
+    ...
 }
 export default React.memo(MyComponent)
 ```
