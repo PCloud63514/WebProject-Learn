@@ -4,12 +4,14 @@ import { Modal, View, TouchableNativeFeedback } from 'react-native'
 export default props => {
     const {visible, close, children} = props
 
+    const wrapChildren = children != undefined ? React.cloneElement(children) : undefined
     return (
         <Modal
             visible={visible}
             transparent={true}
             animationType={'slide'}>
-            <View style={{flex:1,
+            <View 
+                style={{flex:1,
                     backgroundColor: "rgba(0,0,0,0.3)",
                     justifyContent:"center",
                     alignContent:"center",
@@ -19,7 +21,7 @@ export default props => {
 
                 </View>
             </TouchableNativeFeedback>
-                {children}   
+                {wrapChildren}
             </View>
             
         </Modal>
