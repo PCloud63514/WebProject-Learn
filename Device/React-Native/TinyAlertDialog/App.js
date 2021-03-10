@@ -7,10 +7,10 @@
  */
 
 import React from 'react';
-import RootView from './RootView'
+import {ClassRootView} from './RootView'
 const App = () => {
   return (
-      <RootView/>
+      <ClassRootView/>
   );
 };
 

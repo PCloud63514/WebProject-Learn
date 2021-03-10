@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, View } from 'react-native'
+import { Modal, View, TouchableNativeFeedback } from 'react-native'
 
 export default props => {
     const {visible, close, children} = props
@@ -14,8 +14,14 @@ export default props => {
                     justifyContent:"center",
                     alignContent:"center",
                     alignItems:"center"}}>
-                {children}
+            <TouchableNativeFeedback onPress={()=> close()}>
+                <View style={{width:25, height:25, backgroundColor:'red'}}>
+
+                </View>
+            </TouchableNativeFeedback>
+                {children}   
             </View>
+            
         </Modal>
     )
 }
