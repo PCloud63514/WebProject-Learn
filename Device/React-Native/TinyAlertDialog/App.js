@@ -1,0 +1,21 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import React from 'react';
+import {ClassRootView} from './RootView'
+const App = () => {
+  return (
+      <ClassRootView/>
+  );
+};
+
+
+
+
+
+export default React.memo(App);
