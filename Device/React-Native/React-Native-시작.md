@@ -96,8 +96,10 @@ State와 뚜렷한 차이점은 **수정**이 불가능하다는 점입니다.
 
 
 
-**componentDidMount** React.DOM에 Mount 되었을 때 호출됩니다. 즉 첫 Rendering 과정 입니다.
+**componentDidMount** React.DOM에 Mount 되었을 때 호출됩니다.
 
+> Rendering이 한 번 진행 된 후에 호출됩니다.
+>
 > Component가 동작하기 위한 리소스를 불러오는 곳으로 쓰입니다. 
 >
 > 주로 Network 와 관련된 로직을 호출합니다.
@@ -277,7 +279,7 @@ PureComponent는 자동으로 Current State & Props 와 next State Props를 얕�
 import React from 'react'
 
 export default class MyComponent extends React.PureComponent {
-    ...
+	...
 }
 ```
 
