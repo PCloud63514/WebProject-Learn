@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-public class MemberRepository implements IMemberRepository {
+public class MemoryMemberRepository implements IMemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
@@ -31,5 +31,10 @@ public class MemberRepository implements IMemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    @Override
+    public void clearStore() {
+        store.clear();
     }
 }

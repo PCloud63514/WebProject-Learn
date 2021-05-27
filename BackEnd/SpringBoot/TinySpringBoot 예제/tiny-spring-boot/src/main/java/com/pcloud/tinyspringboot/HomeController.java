@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class  HomeController {
 
-    @GetMapping("/static")
-    public String home(Model model, @RequestParam(required = false) String name) {
-        System.out.println(name);
-        model.addAttribute("data", name);
+    @GetMapping
+    public String home(Model model) {
+//        model.addAttribute("data", name);
         return "home";
     }
 
