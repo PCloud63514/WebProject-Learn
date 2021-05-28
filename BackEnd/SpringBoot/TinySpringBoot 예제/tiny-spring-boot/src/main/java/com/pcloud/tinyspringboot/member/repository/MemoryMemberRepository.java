@@ -33,7 +33,6 @@ public class MemoryMemberRepository implements IMemberRepository {
         return new ArrayList<>(store.values());
     }
 
-    @Override
     public void clearStore() {
         store.clear();
     }
