@@ -3,9 +3,12 @@ package com.pcloud.tinyspringboot.member.service;
 import com.pcloud.tinyspringboot.member.domain.Member;
 import com.pcloud.tinyspringboot.member.repository.IMemberRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+//jpa를 쓸꺼면 Transactional 이 필요. 특정함수에만 동작하면 거기에 붙여도 됨
+@Transactional
 public class MemberService {
     private IMemberRepository memoryMemberRepository;
 

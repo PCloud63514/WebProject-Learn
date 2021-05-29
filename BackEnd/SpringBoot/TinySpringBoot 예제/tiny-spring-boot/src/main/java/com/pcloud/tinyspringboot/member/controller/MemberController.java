@@ -23,7 +23,6 @@ public class MemberController {
     @GetMapping
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
-        System.out.println("하이");
         model.addAttribute("members", members);
         return "members/memberList";
     }
