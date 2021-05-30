@@ -21,22 +21,15 @@ class MemberRepositoryTest {
     @Test
     public void testMember() throws Exception {
         Member member = new Member();
-        member.setUsername("memberA");
-
-        Long saveId = memberRepository.save(member);
-        Optional<Member> result = memberRepository.find(saveId);
-        Assertions.assertThat(result.get().getId()).isEqualTo(member.getId());
-        Assertions.assertThat(result.get().getUsername()).isEqualTo(member.getUsername());
-        //같은 영속성 컨텍스트 이므로 true
-        Assertions.assertThat(result.get()).isEqualTo(member);
+        member.setName("PCloud");
+//        member.setAddress();
     }
 
     @Test
-    void save() {
-
+    void testSave() {
     }
 
     @Test
-    void find() {
+    void testFind() {
     }
 }
