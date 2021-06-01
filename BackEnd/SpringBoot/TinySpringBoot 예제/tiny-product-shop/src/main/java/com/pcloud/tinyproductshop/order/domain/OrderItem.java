@@ -1,13 +1,16 @@
 package com.pcloud.tinyproductshop.order.domain;
 
 import com.pcloud.tinyproductshop.product.domain.Product;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
     @Id @GeneratedValue
     @Column(name="order_item_id")
@@ -22,6 +25,9 @@ public class OrderItem {
     private Order order;
     private int orderPrice;
     private int count;
+
+//    protected OrderItem() {
+//    }
 
     //==생성 메서드==//
     public static OrderItem createOrderItem(Product product, int orderPrice, int count) {

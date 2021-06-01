@@ -1,7 +1,9 @@
 package com.pcloud.tinyproductshop.order.domain;
 
 import com.pcloud.tinyproductshop.member.domain.Member;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name="orders")
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
     @Id @GeneratedValue
     @Column(name="order_id")
@@ -69,7 +72,9 @@ public class Order {
         if(delivery.getStatus() == DeliveryStatus.COMP) {
             throw new IllegalStateException("배송이 완료된 상태이므로 취소가 불가능합니다.");
         }
+        //더티체킹: db에 업데이트 쿼리를 작성하지 않아도 jpa에서 변경사항을 검사해서 대신 업데이트를 해준다.
         this.setStatus(OrderStatus.CANCEL);
+
         for (OrderItem orderItem : orderItems) {
             orderItem.cancel();
         }
