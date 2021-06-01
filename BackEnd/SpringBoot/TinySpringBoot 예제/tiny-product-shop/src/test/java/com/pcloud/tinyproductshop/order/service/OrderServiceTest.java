@@ -56,7 +56,7 @@ class OrderServiceTest {
             orderService.order(member.getId(), product.getId(), orderCount);
             fail("재고 수량 예외 발생 실패");
         } catch (NotEnoughStockException e) {
-            
+
         }
     }
 

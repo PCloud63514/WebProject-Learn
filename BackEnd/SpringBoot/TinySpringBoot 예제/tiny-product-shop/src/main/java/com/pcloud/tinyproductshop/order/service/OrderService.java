@@ -5,6 +5,7 @@ import com.pcloud.tinyproductshop.member.repository.IMemberRepository;
 import com.pcloud.tinyproductshop.order.domain.Delivery;
 import com.pcloud.tinyproductshop.order.domain.Order;
 import com.pcloud.tinyproductshop.order.domain.OrderItem;
+import com.pcloud.tinyproductshop.order.domain.OrderSearch;
 import com.pcloud.tinyproductshop.order.repository.IOrderRepository;
 import com.pcloud.tinyproductshop.product.domain.Product;
 import com.pcloud.tinyproductshop.product.repository.IProductRepository;
@@ -54,8 +55,13 @@ public class OrderService {
     public void cancel(Long orderId) {
         orderRepository.findOne(orderId).cancel();
     }
-    //검색
-//    public List<Order> searchOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+
+    /**
+     * 검색
+     * @param orderSearch
+     * @return
+     */
+    public List<Order> searchOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 }
