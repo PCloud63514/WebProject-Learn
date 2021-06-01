@@ -11,8 +11,8 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="dtype")
-@Getter
-public abstract class Product {
+@Getter @Setter
+public class Product {
     @Id @GeneratedValue
     @Column(name="product_id")
     private Long Id;
