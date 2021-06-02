@@ -3,15 +3,13 @@ package com.pcloud.tinyproductshop.product.controller;
 import com.pcloud.tinyproductshop.product.domain.Category;
 import com.pcloud.tinyproductshop.product.domain.Product;
 import com.pcloud.tinyproductshop.product.domain.impl.Book;
+import com.pcloud.tinyproductshop.product.dto.BookDto;
 import com.pcloud.tinyproductshop.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +43,7 @@ public class ProductController {
         book.setCategories(categories);
         book.setAuthor(productForm.getAuthor());
         book.setIsbn(productForm.getIsbn());
-        
+
         productService.saveProduct(book);
 
         return "redirect:/";
@@ -75,16 +73,15 @@ public class ProductController {
     }
 
     @PostMapping("/{id}/edit")
-    public String updateProduct(@PathVariable Long id, ProductForm productForm, BindingResult br) {
-        Book book = (Book) productService.findOne(id).get();
-        book.setName(productForm.getName());
-        book.setPrice(productForm.getPrice());
-        book.setStockQuantity(productForm.getStockQuantity());
-        book.setAuthor(productForm.getAuthor());
-        book.setIsbn(productForm.getIsbn());
+    public String updateProduct(@PathVariable Long id, @ModelAttribute("form") ProductForm form, BindingResult br) {
+        BookDto bookDto = new BookDto();
+        bookDto.setName(form.getName());
+        bookDto.setPrice(form.getPrice());
+        bookDto.setStockQuantity(form.getStockQuantity());
+        bookDto.setAuthor(form.getAuthor());
+        bookDto.setIsbn(form.getIsbn());
+        productService.updateProduct(id, bookDto);
 
-        productService.saveProduct(book);
-
-        return "redirect:/";
+        return "redirect:/product";
     }
 }
