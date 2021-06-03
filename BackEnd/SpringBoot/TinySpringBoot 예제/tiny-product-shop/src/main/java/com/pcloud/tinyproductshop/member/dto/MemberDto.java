@@ -12,4 +12,13 @@ public class MemberDto {
     @NotEmpty
     private String name;
     private Address address;
+
+    public MemberDto() {
+    }
+
+    public MemberDto(Long id, @NotEmpty String name, Address address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 }

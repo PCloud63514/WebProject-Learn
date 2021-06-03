@@ -1,5 +1,6 @@
 package com.pcloud.tinyproductshop.member.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pcloud.tinyproductshop.order.domain.Order;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class Member {
     private String name;
     @Embedded
     private Address address;
+
     @OneToMany(mappedBy="member")
     private List<Order> orders = new ArrayList<>();
 

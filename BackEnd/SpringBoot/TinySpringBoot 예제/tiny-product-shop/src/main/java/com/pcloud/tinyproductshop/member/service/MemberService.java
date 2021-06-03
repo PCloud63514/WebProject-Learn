@@ -1,6 +1,7 @@
 package com.pcloud.tinyproductshop.member.service;
 
 import com.pcloud.tinyproductshop.member.domain.Member;
+import com.pcloud.tinyproductshop.member.dto.MemberDto;
 import com.pcloud.tinyproductshop.member.repository.IMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,12 @@ public class MemberService {
     /*회원 한명 조회*/
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findOne(memberId);
+    }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id).get();
+        member.setName(name);
     }
 
     private void validateDuplicateMember(Member member) {
