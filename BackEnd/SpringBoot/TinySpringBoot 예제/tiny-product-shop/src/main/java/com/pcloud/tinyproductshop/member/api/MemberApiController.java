@@ -1,6 +1,5 @@
 package com.pcloud.tinyproductshop.member.api;
 
-import com.pcloud.tinyproductshop.member.controller.MemberForm;
 import com.pcloud.tinyproductshop.member.domain.Address;
 import com.pcloud.tinyproductshop.member.domain.Member;
 import com.pcloud.tinyproductshop.member.dto.MemberDto;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @RestController
