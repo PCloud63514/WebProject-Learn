@@ -1,19 +1,15 @@
 package com.pcloud.tinyproductshop.order.api;
 
-import com.pcloud.tinyproductshop.member.domain.Address;
 import com.pcloud.tinyproductshop.order.domain.Order;
 import com.pcloud.tinyproductshop.order.domain.OrderSearch;
-import com.pcloud.tinyproductshop.order.domain.OrderStatus;
+import com.pcloud.tinyproductshop.order.dto.OrderQueryDto;
 import com.pcloud.tinyproductshop.order.repository.OrderRepository;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -24,7 +20,7 @@ public class V2OrderApiController {
     private final OrderRepository orderRepository;
 
     @GetMapping("list")
-    public List<OrderDto> orders() {
+    public List<OrderQueryDto> orders() {
         /*
          * Order 2건 조회
          * */
@@ -37,24 +33,9 @@ public class V2OrderApiController {
          * Order가 조회된 건 수는 2개이며, 내부의 Member와 Delivery는 LAZY Loading이므로 각 건마다 한번씩 쿼리를 날린다.
          * */
         return orders.stream()
-                .map(OrderDto::new)
+                .map(OrderQueryDto::new)
                 .collect(toList());
     }
 
-    @Data
-    static class OrderDto {
-        private Long orderId;
-        private String name;
-        private LocalDateTime orderDate;
-        private OrderStatus orderStatus;
-        private Address address;
 
-        public OrderDto(Order order) {
-            orderId = order.getId();
-            name = order.getMember().getName();
-            orderDate = order.getOrderDate();
-            orderStatus = order.getStatus();
-            address = order.getDelivery().getAddress();
-        }
-    }
 }

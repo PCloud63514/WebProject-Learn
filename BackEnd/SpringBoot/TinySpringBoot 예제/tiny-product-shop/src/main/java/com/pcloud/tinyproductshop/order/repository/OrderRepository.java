@@ -4,6 +4,7 @@ import com.pcloud.tinyproductshop.order.domain.Order;
 import com.pcloud.tinyproductshop.order.domain.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import com.pcloud.tinyproductshop.order.dto.*;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -64,5 +65,20 @@ public class OrderRepository implements IOrderRepository {
         cq.where(criteria.toArray(new Predicate[criteria.size()]));
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(100);
         return query.getResultList();
+    }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
+
+    public List<OrderQueryDto> findOrderDtos() {
+        return em.createQuery("select new com.pcloud.tinyproductshop.order.dto.OrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address)" +
+                " from Order o" +
+                " join o.member m" +
+                " join o.delivery d", OrderQueryDto.class).getResultList();
     }
 }
