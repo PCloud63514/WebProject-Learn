@@ -87,4 +87,29 @@ public class OrderRepository implements IOrderRepository {
                         " join fetch oi.product p", Order.class
         ).getResultList();
     }
+
+    public List<Order> findAllWithMemberDeliveryV2(int offset, int limit) {
+        /*
+            ToOne 관계는 row 수를 증가시키지않는다. 즉 fetch join을 하는 것이 옳바르다.
+            또한 페이징 처리에도 문제가 발생하지 않는다.
+            컬렉션은 지연 로딩으로 조회해야한다. 즉 fetch join을 해서는 않된다.
+            지연 로딩 성능 최적화를 위해 hibernate.default_batch_fetch_size, @BatchSize를 적용해야한다.
+            hibernate.default_batch_fetch_size - global 설정
+            @BatchSize - 단일 설정
+            이를 설정하면 n+1 과 같은 1개씩 조회해오는 문제를 설정해둔 갯수만큼 미리 가져온다.
+            default_batch_fetch_size를 사용하면 SQL IN절을 이용해서 데이터를 가져오게된다.
+            즉 fetch join 의 필요성도 없어지게 된다.
+            단 batch 형식이다보니 네트웤 용량이 커지므로 가급적 ToOne 관계는 fetch를 사용하는 것이 좋다.
+            batch Size를 줄이면 속도가 느려지고, 늘리면 순간적인 부하가 늘어나게 되므로 OOM이 발생할 수 있다.
+            이를 잘 맞추는 것이 중요.
+         */
+
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
+    }
 }
