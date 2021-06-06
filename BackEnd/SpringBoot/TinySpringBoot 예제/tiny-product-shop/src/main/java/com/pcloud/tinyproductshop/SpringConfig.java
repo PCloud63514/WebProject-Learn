@@ -11,7 +11,7 @@ public class SpringConfig {
     Hibernate5Module hibernate5Module() {
         Hibernate5Module hibernate5Module = new Hibernate5Module();
         //LAZY 로딩을 강제로
-//        hibernate5Module.configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true);
+        hibernate5Module.configure(Hibernate5Module.Feature.FORCE_LAZY_LOADING, true);
         return hibernate5Module;
     }
 }

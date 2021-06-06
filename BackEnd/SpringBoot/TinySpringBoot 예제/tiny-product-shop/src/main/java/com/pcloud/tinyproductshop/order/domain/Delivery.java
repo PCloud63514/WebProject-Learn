@@ -1,5 +1,6 @@
 package com.pcloud.tinyproductshop.order.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pcloud.tinyproductshop.member.domain.Address;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,8 @@ public class Delivery {
     @Id @GeneratedValue
     @Column(name="delivery_id")
     private Long id;
+
+    @JsonIgnore
     @OneToOne(mappedBy="delivery", fetch = FetchType.LAZY)
     private Order order;
     @Embedded

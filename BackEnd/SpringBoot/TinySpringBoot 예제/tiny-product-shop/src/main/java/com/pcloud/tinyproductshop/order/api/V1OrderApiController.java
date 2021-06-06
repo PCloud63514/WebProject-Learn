@@ -1,6 +1,7 @@
 package com.pcloud.tinyproductshop.order.api;
 
 import com.pcloud.tinyproductshop.order.domain.Order;
+import com.pcloud.tinyproductshop.order.domain.OrderItem;
 import com.pcloud.tinyproductshop.order.domain.OrderSearch;
 import com.pcloud.tinyproductshop.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +26,12 @@ public class V1OrderApiController {
     @GetMapping("list")
     public List<Order> orders() {
         List<Order> all = orderRepository.findAll(new OrderSearch());
+
         for(Order order : all) {
             order.getMember().getName(); //Lazy 강제 초기화
             order.getDelivery().getAddress(); //Lazy 강제 초기화
+            List<OrderItem> orderItems = order.getOrderItems();
+            orderItems.forEach(o->o.getProduct().getName());
         }
         return all;
     }

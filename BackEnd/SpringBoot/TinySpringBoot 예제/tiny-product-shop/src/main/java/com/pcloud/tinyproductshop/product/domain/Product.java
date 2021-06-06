@@ -1,5 +1,6 @@
 package com.pcloud.tinyproductshop.product.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pcloud.tinyproductshop.product.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;

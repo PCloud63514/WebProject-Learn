@@ -5,6 +5,7 @@ import com.pcloud.tinyproductshop.order.domain.OrderSearch;
 import com.pcloud.tinyproductshop.order.dto.OrderQueryDto;
 import com.pcloud.tinyproductshop.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
