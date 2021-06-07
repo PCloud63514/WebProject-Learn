@@ -11,22 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("api/v4/order")
+@RequestMapping("api/v5/order")
 @RestController
 @RequiredArgsConstructor
-public class V4OrderApiController {
+public class V5OrderApiController {
 
     private final OrderRepository orderRepository;
     private final OrderSimpleQueryRepository orderSimpleQueryRepository;
     private final OrderQueryRepository orderQueryRepository;
 
     @GetMapping("list")
-    public List<OrderQueryDto> orders(){
-        return orderSimpleQueryRepository.findOrderDtos();
-    }
-
-    @GetMapping("/list_v2")
-    public List<OrderQueryDto> ordersV2() {
-        return orderQueryRepository.findOrderQueryDtos();
+    public List<OrderQueryDto> orders() {
+        return orderQueryRepository.findAllByDto_optimization();
     }
 }
