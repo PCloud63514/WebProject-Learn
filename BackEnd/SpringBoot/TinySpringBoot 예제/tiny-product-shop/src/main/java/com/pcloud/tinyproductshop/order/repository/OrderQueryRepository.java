@@ -1,5 +1,6 @@
 package com.pcloud.tinyproductshop.order.repository;
 
+import com.pcloud.tinyproductshop.order.dto.OrderFlatDto;
 import com.pcloud.tinyproductshop.order.dto.OrderItemDto;
 import com.pcloud.tinyproductshop.order.dto.OrderQueryDto;
 import lombok.RequiredArgsConstructor;
@@ -66,5 +67,16 @@ public class OrderQueryRepository {
 
     private List<Long> toOrderIds(List<OrderQueryDto> orders) {
         return orders.stream().map(o -> o.getOrderId()).collect(Collectors.toList());
+    }
+
+    public List<OrderFlatDto> findAllByDto_flat() {
+        return em.createQuery(
+                "select new com.pcloud.tinyproductshop.order.dto.OrderFlatDto(o.id, m.name, o.orderDate, o.status, d.address, p.name, oi.orderPrice, oi.count)" +
+                        " from Order o" +
+                        " join o.member m" +
+                        " join o.delivery d" +
+                        " join o.orderItems oi" +
+                        " join oi.product p", OrderFlatDto.class)
+                .getResultList();
     }
 }
