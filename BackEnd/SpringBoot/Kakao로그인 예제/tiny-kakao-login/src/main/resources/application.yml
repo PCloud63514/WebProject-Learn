@@ -1,0 +1,18 @@
+server:
+  port: 8868
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            authorization-grant-type: authorization_code
+            client-id: 5856fa6008bf35bd74d278455b2bc449
+            client-secret: WcIH6RCjUhvTM4iUnpXL9dSbbHiTSbVX
+            redirect-uri: http://pcloud.iptime.org:8080/login/oauth2/code/kakao
+            client-authentication-method: POST
+            client-name: Kakao
+            scope:
+              - profile
+              - account_email
