@@ -1,0 +1,19 @@
+spring:
+  #Spring Boot는 별도의 설정이 없다면 memory mode로 동작하므로 datasource, jpa는 Test에서 작성할 필요가 없다.
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+    username: sa
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      format_sql: true
+
+server:
+  port: 8868
+logging.level:
+  org.hibernate:
+    SQL: debug
+    type: trace
