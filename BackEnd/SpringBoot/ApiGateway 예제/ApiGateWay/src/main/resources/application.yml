@@ -1,0 +1,33 @@
+server:
+  port: 8868 # 서버 포트
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "gateway"
+  endpoint:
+    gateway:
+      enabled: true
+
+spring:
+  cloud:
+    gateway:
+      default-filters:  # SCG 공통 Filter
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway GlobalFilter
+            preLogger: true
+            postLogger: true
+      routes:          # id 기준 라우팅
+        - id: user-svc
+          uri: http://localhost:8081/ # 서비스 중인 msa 주소
+          predicates:        #조건부.
+            - Path=/user/**  # gateway uri + 조건으로 서비스 호출 시 user-svc 호출
+                             # localhost:8868/user/** 호출 시 localhost:8081 호출
+          filters:
+            - name: UserFilter
+              args:
+                baseMessage: Spring Cloud Gateway UserFilter
+                preLogger: true
+                postLogger: true
