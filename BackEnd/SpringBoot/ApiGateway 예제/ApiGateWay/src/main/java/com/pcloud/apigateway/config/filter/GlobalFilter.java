@@ -1,16 +1,15 @@
 package com.pcloud.apigateway.config.filter;
 
 import lombok.Data;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Component
 public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Config> {
-    private static final Logger logger = LogManager.getLogger(GlobalFilter.class);
     public GlobalFilter() {
         super(Config.class);
     }
@@ -18,13 +17,13 @@ public class GlobalFilter extends AbstractGatewayFilterFactory<GlobalFilter.Conf
     @Override
     public GatewayFilter apply(Config config) {
         return ((exchange, chain) -> {
-            logger.info("GlobalFilter baseMessage>>>>>>" + config.getBaseMessage());
+            log.info("GlobalFilter baseMessage>>>>>>" + config.getBaseMessage());
             if (config.isPreLogger()) {
-                logger.info("GlobalFilter Start>>>>>>" + exchange.getRequest());
+                log.info("GlobalFilter Start>>>>>>" + exchange.getRequest());
             }
             return chain.filter(exchange).then(Mono.fromRunnable(()->{
                 if (config.isPostLogger()) {
-                    logger.info("GlobalFilter End>>>>>>" + exchange.getResponse());
+                    log.info("GlobalFilter End>>>>>>" + exchange.getResponse());
                 }
             }));
         });
