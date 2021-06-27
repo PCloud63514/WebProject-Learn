@@ -5,30 +5,45 @@ import {
   View,
 } from 'react-native';
 
-function Type(type) { return Reflect.metadata("design:type", type); }
+class T {
 
-function logType(target:any, key:string) {
-  var t = Reflect.getMetadata("design:type", target, key)
-  console.log(`${key} type: ${t}`)
 }
 
-function logType2(...types) {
-  return (target:any, propertyKey:any) => {
-    { Reflect.defineMetadata("design:paramtypes", types, target, propertyKey); }
+class ABC {
+  color:string = 'red'
+
+  constructor(num:number) {
+
+  }
+
+  @Deco
+  fly():void {
+    console.log('hihihi')
   }
 }
 
-class AAA {
-
+function Deco(target:any, key:string) {
+  console.log(`target:${target}`)
+  console.log(`key:${key}`)
+  Reflect.defineMetadata('secret', 123, target, key)
 }
 
-class Demo {
-  @Type(AAA)
-  test:AAA
-  constructor() {
-    this.test = new AAA()
+const secret = Reflect.getMetadata('secret', ABC.prototype, 'fly');
+console.log(secret)
+
+let me = {
+  name:'pcloud',
+  job:'programmer'
+}
+
+const proxiedMe = new Proxy(me, {
+  get:function(target, property, a) {
+    console.log("Hi Proxy")
+    return target[property.valueOf()]
   }
-}
+})
+
+console.log(proxiedMe.job)
 
 class App extends React.Component {
 
