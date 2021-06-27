@@ -146,3 +146,29 @@ Error 메시지에 expo-permissions 관련 로그가 나와 조사해보니 Vers
 **react-native-unimodules** 의 package.json을 확인해보면 이미 내부에서 expo-permissions@12.0.0 을 종속하고 있다.
 
 이를 해결하기 위해 9.1.0으로 수정 후 다시 빌드하여 해결되었다.
+
+
+
+## react-native-reanimated 오류
+
+react-native-svg에 Animation 을 추가할 일이 생겨 관련 모듈인 reanimated를 설치했다.
+
+문제는 별다른 동작 코드 없이 설치만 했을 뿐인데 아래와 같은 에러가 나왔다.
+
+```
+ERROR  Invariant Violation: TurboModuleRegistry.getEnforcing(...): 'NativeReanimated' could not be found. Verify that a module by this name is registered in the native binary.
+```
+
+추가했는데 없다고 나오니 해결에 갈피가 안잡혀 gradlew clean 만 반복하고 있을 때, 관련 게시글을 찾게 되었다.
+
+[TurboModuleRegistry NativeReanimated error · Issue #1127 · software-mansion/react-native-reanimated (github.com)](https://github.com/software-mansion/react-native-reanimated/issues/1127)
+
+꽤 많은 사람들이 해당 에러를 확인한 듯 싶었고, 아래로 내리다보니 해결법에 관한 내용을 확인했다. 
+
+
+
+### 해결법
+
+[Installation | React Native Reanimated (swmansion.com)](https://docs.swmansion.com/react-native-reanimated/docs/installation/) 설정을 재대로 안한 것이 문제인 듯 싶다.
+
+> 이게 다 npm에 친절히 써있는 내용도 못읽은 내 잘못이다..
