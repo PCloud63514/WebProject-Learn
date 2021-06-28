@@ -6,7 +6,13 @@ module.exports = {
     ["@babel/plugin-proposal-decorators", { "legacy": true}],
     ["@babel/plugin-proposal-class-properties", { "loose": true}],
     ["babel-plugin-inline-import", { "extensions": [".svg"] }],
+    [
+      "module-resolver", {
+        "root":['./src']
+      }
+    ]
   ],
+  
   // "presets": [
   //   "@babel/preset-typescript"
   // ]
