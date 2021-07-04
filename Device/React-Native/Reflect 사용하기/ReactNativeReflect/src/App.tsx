@@ -1,18 +1,16 @@
 import React, {} from 'react';
 import {
-  SafeAreaView,
   Text,
-  TouchableHighlightBase,
   View,
 } from 'react-native';
 
-import Aoo from 'Component/Aoo'
-import Boo from 'Component/Boo'
-import Coo from 'Component/Coo'
+import Duck from '@components/Duck'
 
-let instnace = Reflect.getMetadata("Component", Aoo)
+let instanceDuck:Duck = Reflect.getMetadata("Instance", Duck)
+console.log(instanceDuck)
 
-console.log(instnace)
+instanceDuck.aoo.hello()
+
 
 class App extends React.Component {
 

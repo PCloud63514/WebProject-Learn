@@ -7,8 +7,24 @@ module.exports = {
     ["@babel/plugin-proposal-class-properties", { "loose": true}],
     ["babel-plugin-inline-import", { "extensions": [".svg"] }],
     [
-      "module-resolver", {
-        "root":['./src']
+      "module-resolver",
+      {
+        root: ['./src'],
+        extensions: [
+          '.ios.ts',
+          '.android.ts',
+          '.ts',
+          '.ios.tsx',
+          '.android.tsx',
+          '.tsx',
+          '.jsx',
+          '.js',
+          '.json'],
+        alias: {
+          '@':'./src',
+          '@components':'./src/components',
+          '@decorator':'./src/decorator'
+        }
       }
     ]
   ],
