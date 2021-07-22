@@ -304,12 +304,10 @@
 
 ##### @AllArgsConstructor
 
->멤버필드의 변수를 자동으로 Autowired 가 적용된 Constructor를 생성한다.
+>모든 멤버필드의 변수를 자동으로 Autowired 가 적용된 Constructor를 생성한다.
 
 ##### @RequiredArgsConstructor
 
-> AllArgsConstructor 상위호환.
->
 > 초기화 되지 않은 final 필드나 @NonNull이 붙은 필드에 대해 생성자를 생성해준다.
 >
 > 의존성 주입을 편하게 하기 위해 사용된다.
