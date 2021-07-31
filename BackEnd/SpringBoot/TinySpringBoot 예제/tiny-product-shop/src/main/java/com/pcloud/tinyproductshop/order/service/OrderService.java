@@ -1,7 +1,7 @@
 package com.pcloud.tinyproductshop.order.service;
 
 import com.pcloud.tinyproductshop.member.domain.Member;
-import com.pcloud.tinyproductshop.member.repository.IMemberRepository;
+import com.pcloud.tinyproductshop.member.domain.IMemberRepository;
 import com.pcloud.tinyproductshop.order.domain.Delivery;
 import com.pcloud.tinyproductshop.order.domain.Order;
 import com.pcloud.tinyproductshop.order.domain.OrderItem;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)

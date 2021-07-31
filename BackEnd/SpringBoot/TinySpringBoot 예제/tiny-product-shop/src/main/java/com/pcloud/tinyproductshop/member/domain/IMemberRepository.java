@@ -1,4 +1,4 @@
-package com.pcloud.tinyproductshop.member.repository;
+package com.pcloud.tinyproductshop.member.domain;
 
 import com.pcloud.tinyproductshop.member.domain.Member;
 

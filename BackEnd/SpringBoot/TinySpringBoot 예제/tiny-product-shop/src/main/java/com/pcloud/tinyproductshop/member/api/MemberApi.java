@@ -4,6 +4,7 @@ import com.pcloud.tinyproductshop.member.domain.Address;
 import com.pcloud.tinyproductshop.member.domain.Member;
 import com.pcloud.tinyproductshop.member.dto.MemberDto;
 import com.pcloud.tinyproductshop.member.service.MemberService;
+import com.pcloud.tinyproductshop.member.service.MemberServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("api/members")
 @RequiredArgsConstructor
-public class MemberApiController {
+public class MemberApi {
     private final MemberService memberService;
 
     @PostMapping("/new")
