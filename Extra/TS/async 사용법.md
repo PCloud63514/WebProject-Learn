@@ -21,8 +21,6 @@ function callbackSample() {
 }
 ```
 
-
-
 위와 같은 문제를 Promise 패턴이 해결했습니다.
 
 Promise 는 ES6에 등장한 비동기 처리를 효과적으로 할 수 있는  패턴으로, C#을 사용했던 개발자라면 익숙한 await과 async를 사용하는 방식입니다.
