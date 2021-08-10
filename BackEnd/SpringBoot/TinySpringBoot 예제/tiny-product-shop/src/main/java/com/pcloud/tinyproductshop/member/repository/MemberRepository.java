@@ -1,5 +1,6 @@
 package com.pcloud.tinyproductshop.member.repository;
 
+import com.pcloud.tinyproductshop.member.domain.IMemberRepository;
 import com.pcloud.tinyproductshop.member.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

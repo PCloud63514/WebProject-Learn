@@ -1,6 +1,6 @@
 package com.pcloud.tinyproductshop.order.controller;
 
-import com.pcloud.tinyproductshop.member.service.MemberService;
+import com.pcloud.tinyproductshop.member.service.MemberServiceImpl;
 import com.pcloud.tinyproductshop.order.domain.OrderSearch;
 import com.pcloud.tinyproductshop.order.service.OrderService;
 import com.pcloud.tinyproductshop.product.service.ProductService;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
     private final OrderService orderService;
-    private final MemberService memberService;
+    private final MemberServiceImpl memberService;
     private final ProductService productService;
 
     @GetMapping

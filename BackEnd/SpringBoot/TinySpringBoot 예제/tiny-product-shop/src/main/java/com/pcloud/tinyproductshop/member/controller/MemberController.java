@@ -3,6 +3,7 @@ package com.pcloud.tinyproductshop.member.controller;
 import com.pcloud.tinyproductshop.member.domain.Address;
 import com.pcloud.tinyproductshop.member.domain.Member;
 import com.pcloud.tinyproductshop.member.service.MemberService;
+import com.pcloud.tinyproductshop.member.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -21,13 +22,13 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/new")
-    public String CreateMember(Model model) {
+    public String createMember(Model model) {
         model.addAttribute("memberForm", new MemberForm());
         return "members/createMemberForm";
     }
 
     @PostMapping("/new")
-    public String CreateMember(MemberForm memberForm, BindingResult result) {
+    public String createMember(MemberForm memberForm, BindingResult result) {
         if(result.hasErrors()) {
             return "members/createMemberForm";
         }
@@ -39,7 +40,7 @@ public class MemberController {
     }
 
     @GetMapping
-    public String MemberList(Model model) {
+    public String memberList(Model model) {
         model.addAttribute("members", memberService.findMembers());
         return "members/memberList";
     }
