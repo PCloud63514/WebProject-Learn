@@ -176,12 +176,22 @@
 
 ##### @Entity
 
+> 테이블과 링크될 클래스를 지정.
+>
+> 로우카멜 네이밍의 Entity클래스를 로우스네이크 네이밍으로 테이블의 이름을 매칭
+>
+> ex) HelloWorld -> hello_world
+
 ##### @Id
 
-> primary key 지정
+> 해당 테이블의 primary key 필드임을 명시.
+
+
 
 ##### @GeneratedValue
 
+>PK의 생성 규칙을 지정
+>
 >DB에서자동으로 값을 생성해줄 때 사용되는 Annotation.
 >
 >@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
