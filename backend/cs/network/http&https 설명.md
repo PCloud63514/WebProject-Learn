@@ -10,12 +10,12 @@
 
 </aside>
 
-> **Note:**
-하이퍼텍스트를 교환하기 위해 만들어진 통신규약(프로토콜)입니다.
-기본적으로 80번의 Port를 사용하며, 네트워크 계층 Layer-4에 위치합니다.
-TCP/IP (Layer-3) 위에서 동작하지만, HTTP 자체는 비연결성이며 쿠키 및 세션을 통해 상태를 관리합니다.
-즉 HTTP 자체는 상태를 갖고 있지 않은 State Less 프로토콜 입니다.
-현재 HTTP 1.1은 설정한 시간만큼 TCP 연결을 유지하는 Keep-alive 기능을 지원하여 간헐적인 요청을 없앨 수 있게 되었습니다.
+> **Note:**  
+하이퍼텍스트를 교환하기 위해 만들어진 통신규약(프로토콜)입니다.  
+기본적으로 80번의 Port를 사용하며, 네트워크 계층 Layer-4에 위치합니다.  
+TCP/IP (Layer-3) 위에서 동작하지만, HTTP 자체는 비연결성이며 쿠키 및 세션을 통해 상태를 관리합니다.  
+즉 HTTP 자체는 상태를 갖고 있지 않은 State Less 프로토콜 입니다.  
+현재 HTTP 1.1은 설정한 시간만큼 TCP 연결을 유지하는 Keep-alive 기능을 지원하여 간헐적인 요청을 없앨 수 있게 되었습니다.  
 >
 
 ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb48cb50-90a0-48a8-9602-36d6217cafae/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221215%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221215T143327Z&X-Amz-Expires=86400&X-Amz-Signature=3dbfe274931fb93c8ec9698df960339f4008e28b36013ffb6daf1c3f4e4d0526&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
@@ -38,11 +38,10 @@ TCP/IP (Layer-3) 위에서 동작하지만, HTTP 자체는 비연결성이며 �
 
 ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cc79cb17-3bc5-4fde-b104-effb355099ab/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221215%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221215T143406Z&X-Amz-Expires=86400&X-Amz-Signature=2684e36d5a0405c39cf878190fd274b83a7f876925034472bb9e285eee95c81b&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
-### Note:
-
-HTTP 하단에 SSL(또는 TLS) 보안계층을 추가하여 암호화, 인증, 무결성 보장을 통해 통신을
-안전하게 만들어주는 프로토콜입니다.
+>**Note:**  
+HTTP 하단에 SSL(또는 TLS) 보안계층을 추가하여 암호화, 인증, 무결성 보장을 통해 통신을 안전하게 만들어주는 프로토콜입니다.    
 443 포트를 사용하며, 위에서 언급한 암호화의 경우 [대칭키 방식과 비대칭키 방식](https://www.notion.so/cd443e3bc99c4e0e9d83e6fff497c36c) 을 사용합니다.
+>
 
 ### 동작 과정
 
@@ -58,7 +57,6 @@ Hand-Shaking 의 시작 과정에서 대칭키가 저장된 Session(이하 Sessi
 
 1. Client가 Server로 연결 요청 (SYN)
 2. Server는 공개키를 Client에게 반환 (SYN + ACK)
-    1.
 3. Client는 인증기관(CA / Certificate Authority)에게 공개키를 전달한다.
 4. 인증기관은 등록된 공개키일 경우 암호화되어 있는 인증서를 발급한다.
     1. 단 인증되지 못했을 경우 브라우저에 No Secure 상태로 보여진다.
